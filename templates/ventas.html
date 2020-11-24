@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   Ventas
+{% endblock %}
+
+{% block main %}
+<h1 class="display display-4">Ventas</h1>
+<table class="table table-striped">
+        <tr>
+            <td>Modelo del Vehiculo  </td>
+            <td>Marca del vehiculo</td>
+            <td>Precio</td>
+            <td>Fecha de la venta</td>
+            <td>Kilometraje</td>
+            <td>Temporada de venta</td>
+        </tr>
+        {%for rows in rows%}
+        <tr>
+            <td>{{rows.modelo}}</td>
+            <td>{{rows.marca}}</td>
+            <td>{{rows.precio}}</td>
+            <td>{{rows.fechaventa}}</td>
+            <td>{{rows.kilometraje}}</td>
+            <td>{{rows.temporada}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+{% endblock %}

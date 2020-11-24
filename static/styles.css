@@ -1,0 +1,174 @@
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+/* colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+nav .navbar-brand .yellow
+{
+    color: #f5b82e;
+}
+nav .navbar-brand .green
+{
+    color: #2e944b;
+}
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}
+/* como dar aspecto de tabla
+td,th
+{
+    border: black solid 1px;
+}
+
+table
+{
+    border-collapse:collapse;
+}
+*/
+/*Selector de elemento,en este caso la etiqueta body*/
+body
+{
+    margin:0;/*margen=0,significa que no tiene margen*/
+
+}
+
+/*Selector de clase,Clase cabecera pero solo le estamos aplicando estilo alas etiquetas img de la clase cabecera*/
+.cabecera img
+{
+    height:100px;/*sinifica alto,es estatito,ver medidas*/
+    border-radius:150px;/*borde redondeado*/
+}
+
+/*clase titulo*/
+.titulo
+{/*por defecto todo esta alineado a la izquieda*/
+    text-align:center;/*alinear texto, se puede tambien derecha(right) e izquerda(left)*/
+/*transicion para que transform suceda en un intervalo de un segundo*/
+     transition: transform 1s;
+}
+
+/*pseudo-clase en este caso hover(tocando)*/
+.titulo:hover
+{
+    transform:translatex(500px);
+}
+/*clase pacman,referencia a la imagen del pacman*/
+.pacman
+{
+    width:25px;/*ancho*/
+    height:25px;/*alto*/
+}
+/*clase cabecera*/
+.cabecera
+{
+ /*background-color:gray;-*/
+  background-color:#50B8A0;/*color de fondo*/
+  margin:0;
+  position: fixed;/*posicion fija, es decir no se movera*/
+  z-index: 100;/*para que cualquier efecto no se superponga a lo que esta fijado*/
+   width: 100%;
+}
+
+/*clase menu*/
+.menu
+{
+    margin-top:40px;/*margen de arriba, simulando un espacio*/
+    float:right;/*ya que es una estiqueta de bloque decimos que flote a la derecha, tambien se puede a la izquieda pero no al centro*/
+}
+/*selector de elemento etiquetas a*/
+a
+{
+    margin-top:30px;
+
+    color:black;/*color de la etiqueta*/
+    text-decoration:none;/*quitar la decoracion de la etiqueta a*/
+}
+
+/*cambiar estilos a la imagenes de la clase tabla*/
+.tabla img
+{
+    height:250px;
+    width:200px;
+    margin-right:10px;
+}
+
+/*selector de elemento etiqueta footer*/
+ footer
+ {
+     text-align:right;
+      background-color:#50B8A0;
+ }
+
+/*cambiar estilo de la etiqueta p contenida en el footer*/
+footer p
+{
+    margin:0;
+    font-size:30px;
+}
+
+/*cambiar estilo de la tabla de clase imagenes*/
+ .imagenes table
+ {
+     margin:0 auto;/*de esta forma se centra la tabla*/
+     text-align:center;
+ }
+
+/*clase zoom*/
+ .zoom
+ {
+     transition: transform 0.8s;/*decimos que para que ocurra la propiedad transform va a ocurrir en 0.5 segundos)*/
+ }
+
+ /*En esta parte se agrega la experiencia de usuario o UX*/
+
+
+/*clases y selecterores de elementos en modo hover*/
+ .zoom:hover
+ {
+     transform: scale(1.1);
+ }
+
+a:hover
+{
+
+     color:gray;
+     cursor:pointer;/*como va a estar el cursor en este caso seria una mano*/
+}
+
+p:hover
+{
+    cursor:pointer;
+    color:red;
+}
+

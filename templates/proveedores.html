@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   Proveedores
+{% endblock %}
+
+{% block main %}
+<h1 class="display display-4">Proveedores</h1>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Escribe el nombre del proveedor.." title="Type in a name"  style="background: url(&quot;static/css/p.png&quot;) left center no-repeat rgb(255, 255, 255);"/>
+<table class="table table-striped" id="myTable">
+        <tr>
+
+            <td>Nombre del proveedor</td>
+            <td>Correo</td>
+            <td>Numero de Telefono</td>
+
+
+        </tr>
+        {%for rows in rows%}
+        <tr>
+            <td>{{rows.nombre}}</td>
+            <td>{{rows.correo}}</td>
+            <td>{{rows.ntel}}</td>
+
+
+        </tr>
+        {%endfor%}
+    </table>
+
+       <script>
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+{% endblock %}

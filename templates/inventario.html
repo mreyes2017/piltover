@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   Inventario
+{% endblock %}
+
+{% block main %}
+<h1 class="display display-4">Inventario</h1>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Escribe el nombre del producto.." title="Type in a name"  style="background: url(&quot;static/css/p.png&quot;) left center no-repeat rgb(255, 255, 255);"/>
+<table class="table table-striped" id="myTable">
+        <tr>
+            <td>Modelo del Celular  </td>
+            <td>Marca del Celular</td>
+            <td>Precio</td>
+            <td>Fecha de la venta</td>
+            <td>Proveedor</td>
+            <td>Nombre Comercial</td>
+            <td>Cantidad en stock</td>
+        </tr>
+        {%for rows in rows%}
+        <tr>
+            <td>{{rows.modelo}}</td>
+            <td>{{rows.marca}}</td>
+            <td>{{rows.precio}}</td>
+            <td>{{rows.fechaventa}}</td>
+            <td>{{rows.proveedor}}</td>
+            <td>{{rows.nombreC}}</td>
+            <td>{{rows.cantidad}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+
+     <script>
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+{% endblock %}

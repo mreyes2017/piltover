@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   Empleados
+{% endblock %}
+
+{% block main %}
+<form action="{{ url_for('uclientes') }} " method="post">
+<h1 class="display display-4">Empleados</h1>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Escribe el nombre del Empleado.." title="Type in a name"  style="background: url(&quot;static/css/p.png&quot;) left center no-repeat rgb(255, 255, 255);"/>
+<table class="table table-striped" id="myTable">
+        <tr>
+
+            <td>Nombre del cliente</td>
+            <td>Numero de Telefono</td>
+            <td>Direccion</td>
+
+        </tr>
+        {%for rows in rows%}
+        <tr>
+            <td>{{rows.nombre}}</td>
+            <td>{{rows.numero}}</td>
+            <td>{{rows.direccion}}</td>
+
+        </tr>
+        {%endfor%}
+    </table>
+
+     <script>
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+<br>
+<h1 class="display display-4">Seleccione lo que quiere eliminar:</h1>
+<br>
+    <div class="form-group">
+          {%for rows in rows%}
+            <input id="id" name="id" type="radio" value ="{{ rows.id }}"/> {{ rows.nombre}}<br>
+          {%endfor%}
+     </div>
+
+    <div class="form-group">
+          <button class="btn btn-primary" type="submit">Eliminar Empleado</button>
+    </div>
+{% endblock %}

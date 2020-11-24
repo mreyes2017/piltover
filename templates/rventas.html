@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Registro de ventas
+{% endblock %}
+
+{% block main %}
+      <form action="/rventas" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="modelo" placeholder="Modelo del vehiculo" type="text"/>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="marca" placeholder="Marca del vehiculo" type="text"/>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="precio" placeholder="Precio" type="text"/>
+        </div>
+        <div class="form-group">
+            <label >Fecha de la venta: </label>
+            <br>
+            <input class="form-control" name="fechaventa" placeholder="Fecha de la venta" type="date"/>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="kilometraje" placeholder="Kilometraje" type="text"/>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="temporada" placeholder="Temporada de venta" type="text"/>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Registrar Ventas</button>
+    </form>
+{% endblock %}
